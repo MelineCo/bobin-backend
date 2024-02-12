@@ -31,14 +31,15 @@ router.get('/:number', (req, res) => {
 /* CREATE quote */
 router.post('/new', (req, res) => {
   const { quote, author } = req.body
-  
+
   Quote.find().then(data => {
     const dataBaseSize = data.length
 
     const newQuote = new Quote({
       quote,
       author,
-      number: dataBaseSize + 1
+      number: dataBaseSize + 1,
+      moderated: false
     })
 
     newQuote.save().then(() => res.json({ result: true }))
