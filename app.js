@@ -13,7 +13,7 @@ const cors = require('cors')
 app.use(cors())
 
 app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'https://bobin-frontend-3lp2erjdh-emelines-projects-29ea45cd.vercel.app');
+    res.header('Access-Control-Allow-Origin', 'https://bobin-frontend.vercel.app');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     next();
   });
