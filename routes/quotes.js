@@ -16,6 +16,18 @@ router.get('/', (req, res) => {
   })
 });
 
+/* GET collection size. */
+router.get('/size', (req, res) => {
+  Quote.find().then(data => {
+    console.log(data)
+    if (data) {
+      res.json({ result: true, size: data.length })
+    } else {
+      res.json({ result: false })
+    }
+  })
+});
+
 router.get('/:number', (req, res) => {
   Quote.findOne({ number: req.params.number })
     .then(data => {
